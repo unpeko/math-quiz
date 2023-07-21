@@ -1,4 +1,22 @@
 # Functions go here...
+def math_quiz_challenge():
+  # author: luka
+  # date: Jun 21, 2023
+  # math quiz chanlange def
+  # v1
+
+  # Get user input for difficulty level and quiz length
+  difficulty = input("Choose difficulty level (Easy, Medium, Hard): ").lower()
+
+  if difficulty == "easy":
+    print("You chose easy.")
+  elif difficulty == "medium":
+    print("You chose medium.")
+  elif difficulty == "hard":
+    print("You chose hard.")
+  else:
+    print(
+      "Invalid difficulty level. Please choose from Easy, Medium, or Hard.")
 
 
 def statement_generator(statement, decoration):
@@ -7,7 +25,7 @@ def statement_generator(statement, decoration):
   # generates a border around prints
   # v1.1
 
-  sides = decoration*8
+  sides = decoration * 8
 
   statement = "{} {} {}".format(sides, statement, sides)
   top_bottom = decoration * len(statement)
@@ -18,10 +36,11 @@ def statement_generator(statement, decoration):
 
   return ""
 
-def yes_no(question) :
+
+def yes_no(question):
   # author: luka
   # date: Jun 21, 2023
-  # guser input if they want to chose yes or no 
+  # user input if they want to chose yes or no
   valid = False
   while not valid:
     response = input(question).lower()
@@ -34,9 +53,10 @@ def yes_no(question) :
       response = "no"
       return response
 
-    else: 
-        print("Please answer yes / no")
-      
+    else:
+      print("Please answer yes / no")
+
+
 # Main routine goes here...
 
 # greeting
@@ -50,3 +70,4 @@ played_before = yes_no("Have you played the game before? ")
 if played_before == "no":
   print("instructions")
 
+math_quiz_challenge()
