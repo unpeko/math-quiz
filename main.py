@@ -1,25 +1,29 @@
+import easy
+import medium
+import hard
+
+
 # Functions go here...
 def math_quiz_challenge():
   # author: luka
-  # date: Jun 24, 2023
+  # date: Jun 25, 2023
   # math quiz chanlange def
-  # v2
-
-  # Get difficulty from difficulty index 
-  from difficulty_mapping import difficulty_mapping
+  # v3
 
   # Get user input for difficulty level and quiz length
   difficulty = input("Choose difficulty level (Easy, Medium, Hard): ").lower()
-  
-  # Check if the difficulty level exists in the mapping
-  if difficulty in difficulty_mapping:
-      index = difficulty_mapping[difficulty]
-      print(f"You chose difficulty level: {difficulty}. Index: {index}")
-  else:
-      print("Invalid difficulty level. Please choose from Easy, Medium, or Hard.")
-  
-  quiz_length = int(input("Enter the number of questions you want to answer: "))
-  
+  nof = int(input('how many question you want fam'))
+  match difficulty:
+    case 'easy':
+      easy.questions(nof)
+    case 'medium':
+      medium.questions(nof)
+    case 'hard':
+      hard.questions(nof)
+    case _:
+      'please enter a vadlid input'
+
+
 def statement_generator(statement, decoration):
   # author: luka
   # date: Jun 21, 2023
