@@ -1,7 +1,7 @@
-  # author: luka
-  # date: Jun 25, 2023
-  # easy questions and answers
-  # v1.1
+# author: luka
+# date: Jun 25, 2023
+# easy questions and answers
+# v1.2
 def questions(NOQ):
   qus = [
     '1 + 1 = ',
@@ -65,12 +65,41 @@ def questions(NOQ):
     '29',
     '30',
     '31',
-   ]
+  ]
+  help = [
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+    'use addition '
+  ]
   question = 0
-  for i in range(0,NOQ): 
+  for i in range(0, NOQ):
     hidh = input(qus[question])
     if hidh == answer[question]:
       print('correct')
     else:
       print('incorrect')
+      print('help:', help[question])
     question += 1
