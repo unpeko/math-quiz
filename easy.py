@@ -4,11 +4,11 @@
   # v1
 def questions(NOQ):
   qus = [
-  '1 + 1'
+  '1 + 1','1 + 2'
     
   ]
   answer = [
-    '2'
+    '2','3'
   ]
   question = 0
   for i in range(0,NOQ): 

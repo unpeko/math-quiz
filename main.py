@@ -1,24 +1,24 @@
 import easy
 import medium
 import hard
-
+import useful
 
 # Functions go here...
 def math_quiz_challenge():
   # author: luka
   # date: Jun 25, 2023
   # math quiz chanlange def
-  # v3
+  # v3.1
 
   # Get user input for difficulty level and quiz length
-  difficulty = input("Choose difficulty level (Easy, Medium, Hard): ").lower()
+  difficulty = useful.getUserInput('Choose difficulty level (Easy, Medium, Hard)',['easy','e'],['medium','m'],['hard','h'])
   nof = int(input('how many question you want fam'))
   match difficulty:
-    case 'easy':
+    case 0:
       easy.questions(nof)
-    case 'medium':
+    case 1:
       medium.questions(nof)
-    case 'hard':
+    case 2:
       hard.questions(nof)
     case _:
       'please enter a vadlid input'
