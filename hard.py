@@ -1,7 +1,7 @@
 # author: luka
 # date: Jun 25, 2023
 # hard questions and answers
-# v1.2
+# v1.3
 def questions(NOQ):
   qus = [
     '√(16 + 9)',
@@ -76,16 +76,26 @@ def questions(NOQ):
 
   score = 0
 
+  lives = 3
+
   question = 0
   for i in range(0, NOQ):
     hidh = input(qus[question])
     if hidh == answer[question]:
       print('correct')
       score += 1
+      print('lives:', lives)
+      print()
     else:
       print('incorrect')
       print('help:', help_msg[question])
       print('answer:', answer[question])
+      lives -= 1
+      print('lives:', lives)
+      print()
+      if lives == 0:
+        print("you died")
+        exit()
 
     question += 1
 

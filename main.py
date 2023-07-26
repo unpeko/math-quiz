@@ -26,6 +26,8 @@ def math_quiz_challenge():
     except ValueError:
       print("Invalid input. Please enter a valid number. ")
 
+  print()
+
   match difficulty:
     case 0:
       easy.questions(nof)
@@ -92,3 +94,4 @@ if played_before == "no":
 math_quiz_challenge()
 
 statement_generator("congratulations!", "೫")
+

@@ -1,7 +1,7 @@
 # author: luka
 # date: Jun 25, 2023
 # easy questions and answers
-# v1.2
+# v1.3
 def questions(NOQ):
   qus = [
     '1 + 1 = ',
@@ -105,12 +105,14 @@ def questions(NOQ):
     if hidh == answer[question]:
       print('correct')
       score += 1
+      print('lives:', lives) 
       print()
     else:
       print('incorrect')
       print('help:', help_msg[question])
       print('answer:', answer[question])
       lives -= 1
+      print('lives:', lives) 
       print()
       if lives == 0: 
         print("you died")

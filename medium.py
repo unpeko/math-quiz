@@ -1,7 +1,7 @@
 # author: luka
 # date: Jun 25, 2023
 # medium questions and answers
-# v1.2
+# v1.3
 def questions(NOQ):
   qus = [
     '12 + 23',
@@ -70,18 +70,29 @@ def questions(NOQ):
     '30',
   ]
   help_msg = ['get gud']
+
   score = 0
+
+  lives = 3
 
   question = 0
   for i in range(0, NOQ):
-    hidh = input(qus[question])
-    if hidh == answer[question]:
+    userAns = input(qus[question])
+    if userAns == answer[question]:
       print('correct')
       score += 1
+      print('lives:', lives)
+      print()
     else:
       print('incorrect')
       print('help:', help_msg[question])
       print('answer:', answer[question])
+      lives -= 1
+      print('lives:', lives)
+      print()
+      if lives == 0:
+        print("you died")
+        exit()
 
     question += 1
 
