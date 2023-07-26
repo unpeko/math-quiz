@@ -1,7 +1,7 @@
-  # author: luka
-  # date: Jun 25, 2023
-  # hard questions and answers
-  # v1.1
+# author: luka
+# date: Jun 25, 2023
+# hard questions and answers
+# v1.2
 def questions(NOQ):
   qus = [
     '√(16 + 9)',
@@ -72,11 +72,21 @@ def questions(NOQ):
     '2',
     '3',
   ]
+  help_msg = ['get gud']
+
+  score = 0
+
   question = 0
-  for i in range(0,NOQ): 
+  for i in range(0, NOQ):
     hidh = input(qus[question])
     if hidh == answer[question]:
       print('correct')
+      score += 1
     else:
       print('incorrect')
+      print('help:', help_msg[question])
+      print('answer:', answer[question])
+
     question += 1
+
+  print('your score:', score)

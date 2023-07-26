@@ -87,3 +87,4 @@ if played_before == "no":
 math_quiz_challenge()
 
 statement_generator("congratulations!", "೫")
+

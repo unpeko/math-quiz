@@ -66,40 +66,48 @@ def questions(NOQ):
     '30',
     '31',
   ]
-  help = [
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
-    'use addition '
+  help_msg = [
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
+    'use addition ',
   ]
+
+  score = 0
+
   question = 0
   for i in range(0, NOQ):
     hidh = input(qus[question])
     if hidh == answer[question]:
       print('correct')
+      score += 1
     else:
       print('incorrect')
-      print('help:', help[question])
+      print('help:', help_msg[question])
+      print('answer:', answer[question])
+
     question += 1
+
+  print('your score:', score)
