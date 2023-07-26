@@ -97,16 +97,24 @@ def questions(NOQ):
 
   score = 0
 
+  lives = 3 
+
   question = 0
   for i in range(0, NOQ):
     hidh = input(qus[question])
     if hidh == answer[question]:
       print('correct')
       score += 1
+      print()
     else:
       print('incorrect')
       print('help:', help_msg[question])
       print('answer:', answer[question])
+      lives -= 1
+      print()
+      if lives == 0: 
+        print("you died")
+        exit()
 
     question += 1
 

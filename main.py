@@ -6,33 +6,38 @@ import useful
 
 # Functions go here...
 def math_quiz_challenge():
-    # author: luka
-    # date: Jun 25, 2023
-    # math quiz chanlange def
-    # v3.2
+  # author: luka
+  # date: Jun 25, 2023
+  # math quiz chanlange def
+  # v3.31
 
-    # Get user input for difficulty level and quiz length
-    difficulty = useful.getUserInput(
-        'Choose difficulty level (Easy, Medium, Hard)', ['easy', 'e'],
-        ['medium', 'm'], ['hard', 'h'])
+  # Get user input for difficulty level and quiz length
+  difficulty = useful.getUserInput(
+    'Choose difficulty level (Easy, Medium, Hard)', ['easy', 'e'],
+    ['medium', 'm'], ['hard', 'h'])
 
-    while True:
-        nof = int(input('how many question you want? '))
-        if nof not in range(1, 28):
-            print("enter a valid number between 1 and 28")
-        else:
-            break  # Break out of the while loop if a valid input is provided
+  while True:
+    try:
+      nof = int(input('how many question you want? '))
+      if nof not in range(1, 28):
+        print("enter a valid number between 1 and 28")
+      else:
+        break  # Break out of the while loop if valid input
+    except ValueError:
+      print("Invalid input. Please enter a valid number. ")
 
-    match difficulty:
-        case 0:
-            easy.questions(nof)
-        case 1:
-            medium.questions(nof)
-        case 2:
-            hard.questions(nof)
-        case _:
-            print('please enter a valid input')  # Use print instead of just the string
-          
+  match difficulty:
+    case 0:
+      easy.questions(nof)
+    case 1:
+      medium.questions(nof)
+    case 2:
+      hard.questions(nof)
+    case _:
+      print(
+        'please enter a valid input')  # Use print instead of just the string
+
+
 def statement_generator(statement, decoration):
   # author: luka
   # date: Jun 21, 2023
@@ -87,4 +92,3 @@ if played_before == "no":
 math_quiz_challenge()
 
 statement_generator("congratulations!", "೫")
-
