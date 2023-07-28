@@ -89,9 +89,18 @@ print()
 played_before = yes_no("Have you played the game before? ")
 
 if played_before == "no":
-  print("instructions")
-
-math_quiz_challenge()
-
-statement_generator("congratulations!", "೫")
-
+  print("You have 3 lives, and your goal is to answer as many questions as possible. Their is 3 difficults, easy, medium, and hard, easy is simple addition questions. Medium is a bit harder and involves  ")
+  
+xy = True
+while xy == True:
+  math_quiz_challenge() 
+    
+  statement_generator("congratulations!", "೫")
+  
+  play_again = yes_no("Would you like to paly again?")
+   #ask user if thy want to play again
+  if play_again == "no":
+    print("thank you for playing!")
+    exit()
+    xy = False
+    

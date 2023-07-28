@@ -1,7 +1,7 @@
 # author: luka
 # date: Jun 25, 2023
 # easy questions and answers
-# v1.3
+# v1.4
 def questions(NOQ):
   qus = [
     '1 + 1 = ',
@@ -67,32 +67,32 @@ def questions(NOQ):
     '31',
   ]
   help_msg = [
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
-    'use addition ',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another puppy enters the litter of puppy, how many puppy would their now be?',
+    'use addition, imagine you have 2 pigs and another pigs enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
   ]
 
   score = 0
@@ -116,7 +116,7 @@ def questions(NOQ):
       print()
       if lives == 0: 
         print("you died")
-        exit()
+        break 
 
     question += 1
 
