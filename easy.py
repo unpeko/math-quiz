@@ -1,3 +1,4 @@
+\
 # author: luka
 # date: Jun 25, 2023
 # easy questions and answers
@@ -67,32 +68,58 @@ def questions(NOQ):
     '31',
   ]
   help_msg = [
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another puppy enters the litter of puppy, how many puppy would their now be?',
-    'use addition, imagine you have 2 pigs and another pigs enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
-    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs, how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another puppy enters the litter of puppy,\
+    how many puppy would their now be?',
+    'use addition, imagine you have 2 pigs and another pigs enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
+    'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
+    how many pigs would their now be?',
   ]
 
   score = 0

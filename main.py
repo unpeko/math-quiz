@@ -1,10 +1,23 @@
-import easy
-import medium
-import hard
-import useful
+import easy, medium, hard
+import useful, psave
+import fcntl, termios, struct 
+import os
+
 
 
 # Functions go here...
+def terminal_size():
+  th, tw, hp, wp = struct.unpack('HHHH' ,
+    fcntl.ioctl(0, termios.TIOCGWINSZ,
+    struct.pack('HHHH', 0, 0, 0, 0)))
+  global width
+  width = tw 
+  return tw, th 
+terminal_size()
+
+def stars():
+  print("* *".center(width))
+
 def math_quiz_challenge():
   # author: luka
   # date: Jun 25, 2023
@@ -14,12 +27,12 @@ def math_quiz_challenge():
   # Get user input for difficulty level and quiz length
   difficulty = useful.getUserInput(
     'Choose difficulty level (Easy, Medium, Hard)', ['easy', 'e'],
-    ['medium', 'm'], ['hard', 'h'])
+    ['medium', 'm'], ['hard', 'h'],)
 
   while True:
     try:
       nof = int(input('how many question you want? '))
-      if nof not in range(1, 28):
+      if nof not in range(1, 30):
         print("enter a valid number between 1 and 28")
       else:
         break  # Break out of the while loop if valid input
@@ -77,23 +90,63 @@ def yes_no(question):
     else:
       print("Please answer yes / no")
 
+def print_game_instructions():
+    print("Welcome to the Math Quiz Game!\n")
 
+    print("In this thrilling and educational adventure, you will embark on a journey of mathematical challenges! "
+          "Are you ready to put your math skills to the test and have a blast along the way? Strap in, because you "
+          "are in for an exciting ride!\n")
+
+    print("At the beginning of the game, you will be presented with three exciting difficulty levels to choose "
+          "from: Easy, Medium, and Hard. Each level comes with its own set of math questions that gradually "
+          "increase in complexity. Whether you're a math whiz looking for a challenge or a beginner seeking to "
+          "sharpen your skills, there's a difficulty level perfect for you!\n")
+
+    print("You will start with a total of three lives, so don't worry if you stumble along the way. Every correct "
+          "answer will earn you points, and your ultimate goal is to score as high as you can. Remember, even if "
+          "you lose a life, the game isn't over! Keep pushing yourself and see how far you can go.\n")
+
+    print("Once you've chosen a difficulty level, you'll have the chance to select the number of questions you wish "
+          "to tackle. Prepare to face a series of brain-teasers that will test your arithmetic, algebraic, and even "
+          "trigonometric abilities. But don't fret! We've got you covered with helpful hints if you ever find "
+          "yourself in a tough spot.\n")
+
+    print("As you progress through the game, each round will present a new question for you to solve. Read the "
+          "questions carefully and take your time to calculate the answers. Remember, it's not just about speed; "
+          "accuracy is key!\n")
+
+    print("Every correct answer will give you 1 score to add onto your final score, while an incorrect answer will cost"
+          "you one of your precious lives. So stay focused, but most importantly, have fun! The thrill of solving a "
+          "challenging math problem is truly rewarding.\n")
+  
 # Main routine goes here...
 
 # greeting
-# v1
+# v2
 statement_generator("Math Mastermind", "!")
 print("  Welcome to the best math game")
 print()
 
+name1 = input("what is your name? ")
+  # author: luka
+  # date: Jun 21, 2023
+  # ask user for name 
+  # v1
+
+
 played_before = yes_no("Have you played the game before? ")
+  # author: luka
+  # date: Jun 21, 2023
+  # ask user if played_before
+  # v1.1
 
 if played_before == "no":
-  print("You have 3 lives, and your goal is to answer as many questions as possible. Their is 3 difficults, easy, medium, and hard, easy is simple addition questions. Medium is a bit harder and involves  ")
+  print(print_game_instructions)
   
 xy = True
 while xy == True:
-  math_quiz_challenge() 
+  math_quiz_challenge()
+  print()
     
   statement_generator("congratulations!", "೫")
   
