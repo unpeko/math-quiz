@@ -1,7 +1,13 @@
+import time
+import os
+
+def slep1():
+  time.sleep(3)
+  
 # author: luka
 # date: Jun 25, 2023
 # medium questions and answers
-# v1.4
+# v1.5
 def questions(NOQ):
   qus = [
     '12 + 23',
@@ -131,28 +137,26 @@ def questions(NOQ):
       the number and then subtract the given number. For example, 2³ × 5 - 10 equals 40.',
   ]
   score = 0
-
   lives = 3
-
-  question = 0
   for i in range(0, NOQ):
-    userAns = input(qus[question])
-    if userAns == answer[question]:
+    output = input(qus[i]).lower()
+    if output in answer[i]:
       print('correct')
       score += 1
       print('lives:', lives)
+      print('score:', score)
       print()
+      
     else:
       print('incorrect')
-      print('help:', help_msg[question])
-      print('answer:', answer[question])
+      print('help:', help_msg[i])
+      print('answer:', answer[i])
       lives -= 1
       print('lives:', lives)
-      print()
-      if lives == 0:
+      if lives >= 0:
         print("you died")
+        slep1()
+        os.system('clear')
+        return score 
         break 
-        
-    question += 1
-
-  print('your score:', score)
+  return score 
