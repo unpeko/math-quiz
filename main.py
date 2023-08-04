@@ -26,11 +26,17 @@ def leaderboard():
   # author: luka
   # date: aug 8, 2023
   # leaderboard for players
-  # v1
-  leaderboard = psave.getLeaderBoard()
+  # v1.1
+  leaderboard = psave.getleaderboard()
   print("~ LEADEROARD ~".center(width))
   stars()
 
+  for i, player in enumerate(leaderboard):
+    name = player["name"]
+    score = player["score"]
+    print(f"{i + 1}. {name}: {score}".center(width))
+  stars()
+  
 def math_quiz_challenge():
   # author: luka
   # date: Jun 25, 2023
