@@ -7,6 +7,10 @@ import os
 
 # Functions go here...
 def terminal_size():
+  # author: luka
+  # date: aug 7, 2023
+  # witdh for centing prints and things
+  # v1
   th, tw, hp, wp = struct.unpack('HHHH' ,
     fcntl.ioctl(0, termios.TIOCGWINSZ,
     struct.pack('HHHH', 0, 0, 0, 0)))
@@ -17,6 +21,15 @@ terminal_size()
 
 def stars():
   print("* *".center(width))
+
+def leaderboard():
+  # author: luka
+  # date: aug 8, 2023
+  # leaderboard for players
+  # v1
+  leaderboard = psave.getLeaderBoard()
+  print("~ LEADEROARD ~".center(width))
+  stars()
 
 def math_quiz_challenge():
   # author: luka
@@ -133,13 +146,14 @@ name1 = input("what is your name? ")
   # ask user for name 
   # v1
 
+leaderboard()
+print()
 
 played_before = yes_no("Have you played the game before? ")
   # author: luka
   # date: Jun 21, 2023
   # ask user if played_before
   # v1.1
-
 if played_before == "no":
   print(print_game_instructions)
   
@@ -150,10 +164,15 @@ while xy == True:
     
   statement_generator("congratulations!", "೫")
   
-  play_again = yes_no("Would you like to paly again?")
-   #ask user if thy want to play again
+  play_again = yes_no("Would you like to play again?")
+  # author: luka
+  # date: aug 8, 2023
+  # ask user if they want to play again
+  # v1
   if play_again == "no":
     print("thank you for playing!")
     exit()
     xy = False
-    
+  else:
+    os.system('clear')
+    leaderboard()
