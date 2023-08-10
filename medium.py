@@ -7,7 +7,7 @@ def slep1():
 # author: luka
 # date: Jun 25, 2023
 # medium questions and answers
-# v1.5
+# v1.6
 def questions(NOQ):
   qus = [
     '12 + 23 = ',
@@ -42,38 +42,38 @@ def questions(NOQ):
     '2³ × 5 - 10 = ',
   ]
   answer = [
-    '35',
-    '18',
-    '40',
-    '5',
-    '25',
-    '6',
-    '1',
-    '1/5',
-    '3',
-    '1/3',
-    '23',
-    '35',
-    '13',
-    '8',
-    '40',
-    '19',
-    '20',
-    '15',
-    '14',
-    '11',
-    '120',
-    '1000',
-    '16',
-    '20',
-    '23',
-    '13',
-    '34',
-    '5040',
-    '25',
-    '18',
-    '5',
-    '30',
+    ['35'],
+    ['18'],
+    ['40'],
+    ['5'],
+    ['25'],
+    ['6'],
+    ['1'],
+    ['1/5'],
+    ['3'],
+    ['1/3'],
+    ['23'],
+    ['35'],
+    ['13'],
+    ['8'],
+    ['40'],
+    ['19'],
+    ['20'],
+    ['15'],
+    ['14'],
+    ['11'],
+    ['120'],
+    ['1000'],
+    ['16'],
+    ['20'],
+    ['23'],
+    ['13'],
+    ['34'],
+    ['5040'],
+    ['25'],
+    ['18'],
+    ['5'],
+    ['30'],
   ]
   help_msg = [
       'To add two numbers, simply add their digits. For example, 12 + 23 equals 35.',
@@ -138,25 +138,33 @@ def questions(NOQ):
   ]
   score = 0
   lives = 3
-  for i in range(0, NOQ):
+  # author: luka
+  # date: aug 11, 2023
+  # diiificulty processing 
+  # v1.5
+  for i in range(NOQ):
     output = input(qus[i]).lower()
     if output in answer[i]:
       print('correct')
-      score += 1
       print('lives:', lives)
-      print('score:', score)
+      score += 10
+      print('score:', score) 
       print()
       
     else:
       print('incorrect')
+      print('answer:', str(answer[i][0]))
       print('help:', help_msg[i])
-      print('answer:', answer[i])
       lives -= 1
       print('lives:', lives)
-      if lives >= 0:
-        print("you died")
-        slep1()
-        os.system('clear')
-        return score 
-        break 
+      print('score:', score) 
+      print()
+
+    
+    if lives <= 0:
+      print("you died")
+      slep1()
+
+      return score 
+      break 
   return score 

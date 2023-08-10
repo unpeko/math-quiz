@@ -7,79 +7,76 @@ def slep1():
 # author: luka
 # date: Jun 25, 2023
 # hard questions and answers
-# v1.5
+# v1.6
 def questions(NOQ):
   qus = [
-    '√(16 + 9)',#1
-    '2⁵',#2
-    '6!',#3
-    'log₂(64)',#4
-    '3 + 4 × 5 ÷ 3 - 1(round to 3 decimal places)',
-    '3² + 4³',
-    '√(144 + 25)',
-    '(2 + 3)²',
-    '3/4 + 4/5',
-    '2/3 ÷ 3/4',
-    'sin(30°)',
-    'cos(45°)',
-    'tan(60°)',
-    'sin²(45°) + cos²(45°)',
-    'log₅(125)',
-    '5P2 (permutations)',
-    '7C3 (combinations)',
-    '√(36 × 49)',
-    '2³ + 3⁴',
-    'log₃(27)',
-    'tan(45°) - sin(60°)',
-    'cos²(30°) - sin²(30°)',
-    '√(5² + 12²)',
-    '√(10 + 2³)',
-    '2^(1/2) × 4^(1/2)',
-    '5! - 4!',
-    'log₁₀(1000)',
-    'tan(45°) × cos(60°)',
-    'sin(45°) + cos(30°)',
-    'sin(30°) × cos(60°)',
-    '√(5 × 10 ÷ 2)',
-    'log₂(16) + log₃(81)',
-    'In this formula f(x) = f(a) + (x - a)(f(a))/(1!) + (x - a)^2(f(a))/(2!) + (x - a)^3(f(a))/(3!)\
-    + ... + (x - a)^n(f(a))/(n!) + ...  what is sin(x)'
+    '√(16 + 9) = ',#1
+    '2⁵ = ',#2
+    '6! = ',#3
+    'log₂(64) = ',#4
+    '3 + 4 × 5 ÷ 3 - 1(round to 3 decimal places) = ',
+    '3² + 4³ = ',
+    '√(144 + 25) = ',
+    '(2 + 3)² = ',
+    '3/4 + 4/5 = ',
+    '2/3 ÷ 3/4 = ',
+    'sin(30°) = ',
+    'cos(45°) = ',
+    'tan(60°) = ',
+    'sin²(45°) + cos²(45°) = ',
+    'log₅(125) = ',
+    '5P2 (permutations) = ',
+    '7C3 (combinations) = ',
+    '√(36 × 49 = )',
+    '2³ + 3⁴ = ',
+    'log₃(27) = ',
+    'tan(45°) - sin(60°) = ',
+    'cos²(30°) - sin²(30°) = ',
+    '√(5² + 12²) = ',
+    '√(10 + 2³) = ',
+    '2^(1/2) × 4^(1/2) = ',
+    '5! - 4! = ',
+    'log₁₀(1000) = ',
+    'tan(45°) × cos(60°) = ',
+    'sin(45°) + cos(30°) = ',
+    'sin(30°) × cos(60°) = ',
+    '√(5 × 10 ÷ 2) = ',
+    'log₂(16) + log₃(81) = ',
   ]
   answer = [
-    '5',
-    '32',
-    '720',
-    '6',
-    '8.666',
-    '91',
-    '13',
-    '25',
-    '31/20',
-    '8/9',
-    '0.5',
-    'sqrt2/2',
-    'sqrt3',
-    '1',
-    '3',
-    '20',
-    '35',
-    '84',
-    '169',
-    '3',
-    '0.5',
-    '0.75',
-    '13',
-    'sqrt14',
-    'sqrt2',
-    '20',
-    '480',
-    '3',
-    'sqrt3',
-    'sqrt2',
-    'sqrt5',
-    '2',
-    '3',
-    'sin(x) = x - (x^3)/(3!) + (x^5)/(5!) - (x^7)/(7!) + (x^9)/(9!) - ...'
+    ['5'],
+    ['32'],
+    ['720'],
+    ['6'],
+    ['8.666'],
+    ['91'],
+    ['13'],
+    ['25'],
+    ['31/20'],
+    ['8/9'],
+    ['0.5'],
+    ['sqrt2/2'],
+    ['sqrt3'],
+    ['1'],
+    ['3'],
+    ['20'],
+    ['35'],
+    ['84'],
+    ['169'],
+    ['3'],
+    ['0.5'],
+    ['0.75'],
+    ['13'],
+    ['sqrt14'],
+    ['sqrt2'],
+    ['20'],
+    ['480'],
+    ['3'],
+    ['sqrt3'],
+    ['sqrt2'],
+    ['sqrt5'],
+    ['2'],
+    ['3']
   ]
 
   help_msg = [
@@ -166,29 +163,32 @@ def questions(NOQ):
   score = 0
   lives = 3
   # author: luka
-  # date: aug 5, 2023
+  # date: aug 11, 2023
   # diiificulty processing 
-  # v1.4
+  # v1.5
   for i in range(NOQ):
     output = input(qus[i]).lower()
     if output in answer[i]:
       print('correct')
       print('lives:', lives)
-      print('score:', score)
+      score += 10
+      print('score:', score) 
       print()
       
     else:
       print('incorrect')
+      print('answer:', str(answer[i][0]))
       print('help:', help_msg[i])
-      print('answer:', answer[i])
       lives -= 1
       print('lives:', lives)
+      print('score:', score) 
+      print()
 
-    score += 1
+    
     if lives <= 0:
       print("you died")
       slep1()
-      os.system('clear')
+
       return score 
       break 
   return score 

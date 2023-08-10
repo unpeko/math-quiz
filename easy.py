@@ -7,7 +7,7 @@ def slep1():
 # author: luka
 # date: Jun 25, 2023
 # easy questions and answers
-# v1.5
+# v1.6
 def questions(NOQ):
   qus = [
     '1 + 1 = ',
@@ -41,36 +41,36 @@ def questions(NOQ):
     '15 + 16 = ',
   ]
   answer = [
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
-    '21',
-    '22',
-    '23',
-    '24',
-    '25',
-    '26',
-    '27',
-    '28',
-    '29',
-    '30',
-    '31',
+    ['2'],
+    ['3'],
+    ['4'],
+    ['5'],
+    ['6'],
+    ['7'],
+    ['8'],
+    ['9'],
+    ['10'],
+    ['11'],
+    ['12'],
+    ['13'],
+    ['14'],
+    ['15'],
+    ['16'],
+    ['17'],
+    ['18'],
+    ['19'],
+    ['20'],
+    ['21'],
+    ['22'],
+    ['23'],
+    ['24'],
+    ['25'],
+    ['26'],
+    ['27'],
+    ['28'],
+    ['29'],
+    ['30'],
+    ['31'],
   ]
   help_msg = [
     'use addition, imagine you have 2 pigs and another pig enters the litter of pigs,\
@@ -129,25 +129,33 @@ def questions(NOQ):
 
   score = 0
   lives = 3
-  for i in range(0, NOQ):
+  # author: luka
+  # date: aug 11, 2023
+  # diiificulty processing 
+  # v1.5
+  for i in range(NOQ):
     output = input(qus[i]).lower()
     if output in answer[i]:
       print('correct')
-      score += 1
       print('lives:', lives)
-      print('score:', score)
+      score += 10
+      print('score:', score) 
       print()
       
     else:
       print('incorrect')
+      print('answer:', str(answer[i][0]))
       print('help:', help_msg[i])
-      print('answer:', answer[i])
       lives -= 1
       print('lives:', lives)
-      if lives >= 0:
-        print("you died")
-        slep1()
-        os.system('clear')
-        return score 
-        break 
+      print('score:', score) 
+      print()
+
+    
+    if lives <= 0:
+      print("you died")
+      slep1()
+
+      return score 
+      break 
   return score 
