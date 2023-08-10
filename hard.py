@@ -165,11 +165,14 @@ def questions(NOQ):
 
   score = 0
   lives = 3
-  for i in range(0, NOQ):
+  # author: luka
+  # date: aug 5, 2023
+  # diiificulty processing 
+  # v1.4
+  for i in range(NOQ):
     output = input(qus[i]).lower()
     if output in answer[i]:
       print('correct')
-      score += 1
       print('lives:', lives)
       print('score:', score)
       print()
@@ -180,10 +183,12 @@ def questions(NOQ):
       print('answer:', answer[i])
       lives -= 1
       print('lives:', lives)
-      if lives >= 0:
-        print("you died")
-        slep1()
-        os.system('clear')
-        return score 
-        break 
+
+    score += 1
+    if lives <= 0:
+      print("you died")
+      slep1()
+      os.system('clear')
+      return score 
+      break 
   return score 
