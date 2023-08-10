@@ -147,7 +147,7 @@ def questions(NOQ):
     if output in answer[i]:
       print('correct')
       print('lives:', lives)
-      score += 10
+      score += 5
       print('score:', score) 
       print()
       

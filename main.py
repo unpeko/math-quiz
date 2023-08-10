@@ -169,8 +169,8 @@ def update_score_and_save(new_score):
 
 # greeting
 # v2
-statement_generator("Math Mastermind", "!")
-print("  Welcome to the best math game")
+statement_generator("Math Mastermind", "!".center(width))
+print("Welcome to the best math game".center(width))
 print()
 
 name = input("what is your name? ")
@@ -205,7 +205,7 @@ while playing == True:
   math_quiz_challenge()
   print()
 
-  statement_generator("congratulations!", "೫")
+  statement_generator("congratulations!", "೫".center(width))
   leaderboard()
   play_again = yes_no("Would you like to play again?")
   # author: luka
