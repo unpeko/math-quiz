@@ -96,9 +96,9 @@ def statement_generator(statement, decoration):
   statement = "{} {} {}".format(sides, statement, sides)
   top_bottom = decoration * len(statement)
 
-  print(top_bottom)
-  print(statement)
-  print(top_bottom)
+  print(top_bottom.center(width))
+  print(statement.center(width))
+  print(top_bottom.center(width))
 
   return ""
 
@@ -169,7 +169,7 @@ def update_score_and_save(new_score):
 
 # greeting
 # v2
-statement_generator("Math Mastermind", "!".center(width))
+statement_generator("Math Mastermind", "!")
 print("Welcome to the best math game".center(width))
 print()
 
@@ -205,7 +205,7 @@ while playing == True:
   math_quiz_challenge()
   print()
 
-  statement_generator("congratulations!", "೫".center(width))
+  statement_generator("congratulations!", "೫")
   leaderboard()
   play_again = yes_no("Would you like to play again?")
   # author: luka
