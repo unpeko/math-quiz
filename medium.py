@@ -136,7 +136,7 @@ def questions(NOQ):
       'To find the sum of a power of a number and a subtraction, first calculate the power of\
       the number and then subtract the given number. For example, 2³ × 5 - 10 equals 40.',
   ]
-score = 0
+  score = 0
   #sets intial score at begining of game
   lives = 3
   #sers intial lives

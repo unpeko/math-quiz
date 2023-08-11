@@ -11,6 +11,10 @@ responseNo = ["no", "n", "nope", "nah", "maybe"]
 
 
 def getUserInput(question, *options):
+  # author: luka
+  # date: Jun 25, 2023
+  # making input optimized and effeceint 
+  # v1
   while True:
     response = input(question + " ").lower()
     for index, option in enumerate(options):
