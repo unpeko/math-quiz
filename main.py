@@ -38,6 +38,7 @@ def leaderboard():
     name = player["name"]
     score = player["score"]
     print(f"{i + 1}. {name}: {score}".center(width))
+    #lists players in decending order
   stars()
 
 
@@ -56,9 +57,10 @@ def math_quiz_challenge():
   )
 
   while True:
+    #ask user for how much quesions they want
     try:
       nof = int(input('how many question you want? '))
-      if nof not in range(1, 30):
+      if nof not in range(1, 28):
         print("enter a valid number between 1 and 28")
       else:
         break  # Break out of the while loop if valid input
@@ -68,11 +70,16 @@ def math_quiz_challenge():
   print()
 
   match difficulty:
+  # author: luka
+  # date: Jun 25, 2023
+  # math quiz chanlange def
   #v:2
     case 0:
       score = easy.questions(nof)
+      #links difficutly based on input
       player["score"] = player["score"] + score
       psave.saveplayer(player)
+      #adds players score form game so json file
     case 1:
       score = medium.questions(nof)
       player["score"] = player["score"] + score
@@ -82,6 +89,7 @@ def math_quiz_challenge():
       player["score"] = player["score"] + score
       psave.saveplayer(player)
     case _:
+      #if user input not in case seiries, print this
       print('please enter a valid input')
 
 
@@ -109,6 +117,7 @@ def yes_no(question):
   # user input if they want to chose yes or no
   valid = False
   while not valid:
+    # put user in loop
     response = input(question).lower()
 
     if response == "yes" or response == "y":
@@ -124,6 +133,10 @@ def yes_no(question):
 
 
 def print_game_instructions():
+  # author: luka
+  # date: Jun 21, 2023
+  # game instructions
+  # v2
   print("Welcome to the Math Quiz Game!\n")
 
   print(
@@ -171,42 +184,59 @@ def update_score_and_save(new_score):
 # v2
 statement_generator("Math Mastermind", "!")
 print("Welcome to the best math game".center(width))
+#title screen
 print()
 
 name = input("what is your name? ")
 # author: luka
-# date: Jun 21, 2023
+# date: aug 10, 2023
 # ask user for name and save
 # v1.3
+#load player form json
 player = psave.loadplayer(name)
 
 if (player == "not found"):
   player = psave.createplayer(name)
-  played_before = yes_no("do you want instructions? ")
+  #creates player if not found in json
+  instructions = yes_no("do you want instructions? ")
   # author: luka
-  # date: Jun 21, 2023
-  # ask user if played_before
-  # v1.2
-  if played_before == "yes":
+  # date: aug 10, 2023
+  # ask user if they want instruction
+  # v1.3
+  if instructions == "yes":
     print_game_instructions()
+    #if user inputs yes, print game instructions & break out of loop
 
+  elif instructions == "no":
+    print("have fun!")
+    #if user inputs no, continue 
+    
   else:
     print("please enter either yes or no")
+    # continue loop if user inputs invalid option
+    
+    
 
 else:
+  #if user is found in json it will print this 
   print(f"welcome back {name}")
   played_before = True
 
 leaderboard()
+#displays leaderboard
 print()
 
 playing = True
 while playing == True:
+  #put user in game loop
   math_quiz_challenge()
+  #starts math game
   print()
 
+  #concratulation screen
   statement_generator("congratulations!", "೫")
   leaderboard()
+  
   play_again = yes_no("Would you like to play again?")
   # author: luka
   # date: aug 8, 2023
@@ -215,6 +245,8 @@ while playing == True:
   if play_again == "no":
     print("thank you for playing!")
     exit()
+    #exits program on user no input
   else:
     os.system('clear')
     leaderboard()
+    # repeats loop whist clearing screen

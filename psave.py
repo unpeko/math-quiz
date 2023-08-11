@@ -22,6 +22,10 @@ def loadplayer(name):
   return "not found"
 
 def saveplayer(player):
+  # author: luka
+  # date: aug 4, 2023
+  # save player 
+  # v1
   with open("save.json", "r") as file:
     allplayers = json.load(file)
 
@@ -38,9 +42,7 @@ def saveplayer(player):
   with open("save.json", "w") as file:
     json.dump(allplayers, file)
 
-def calculateScore(p):
-  return p["score"]
-  
+
 def getleaderboard():
   # author: luka
   # date: aug 4, 2023
