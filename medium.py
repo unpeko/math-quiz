@@ -1,13 +1,14 @@
 import time
-import os
+
 
 def slep1():
   time.sleep(3)
-  
-# author: luka
-# date: Jun 25, 2023
-# medium questions and answers
-# v1.6
+
+
+# Author: luka
+# Date: Jun 25, 2023
+# Medium questions and answers
+# V1.6
 def questions(NOQ):
   qus = [
     '12 + 23 = ',
@@ -76,111 +77,110 @@ def questions(NOQ):
     ['30'],
   ]
   help_msg = [
-      'To add two numbers, simply add their digits. For example, 12 + 23 equals 35.',
-      'To subtract one number from another, subtract their digits. For example, 34 - 16 equals 18.',
-      'To multiply two numbers, multiply their digits. For example, 8 × 5 equals 40.',
-      'To divide one number by another, divide their digits. For example, 45 ÷ 9 equals 5.',
-      'To find the square of a number, multiply the number by itself. For example, 5² equals 25.',
-      'To find the square root of a number, find a number that, when multiplied by \
+    'To add two numbers, simply add their digits. For example, 12 + 23 equals 35.',
+    'To subtract one number from another, subtract their digits. For example, 34 - 16 equals 18.',
+    'To multiply two numbers, multiply their digits. For example, 8 × 5 equals 40.',
+    'To divide one number by another, divide their digits. For example, 45 ÷ 9 equals 5.',
+    'To find the square of a number, multiply the number by itself. For example, 5² equals 25.',
+    'To find the square root of a number, find a number that, when multiplied by \
       itself, equals the given number. For example, √36 equals 6.',
-      'To add fractions with the same denominator, simply add their numerators. For \
+    'To add fractions with the same denominator, simply add their numerators. For \
       example, 3/4 + 1/4 equals 1.',
-      'To subtract fractions with the same denominator, simply subtract their numerators.\
+    'To subtract fractions with the same denominator, simply subtract their numerators.\
       For example, 2/5 - 1/5 equals 1/5.',
-      'To multiply a whole number and a fraction, multiply the whole number by the numerator\
+    'To multiply a whole number and a fraction, multiply the whole number by the numerator\
       of the fraction. For example, 1/3 × 9 equals 3.',
-      'To divide a fraction by a whole number, divide the numerator of the fraction by the\
+    'To divide a fraction by a whole number, divide the numerator of the fraction by the\
       whole number. For example, 2/3 ÷ 2 equals 1/3.',
-      'To evaluate an expression with multiple operations, follow the order of operations:\
+    'To evaluate an expression with multiple operations, follow the order of operations:\
       parentheses, exponents, multiplication and division (from left to right), and finally \
       addition and subtraction (from left to right). For example, 3 + 4 × 5 equals 23.',
-      'To evaluate an expression with parentheses, first calculate the value inside the parentheses.\
+    'To evaluate an expression with parentheses, first calculate the value inside the parentheses.\
       For example, (3 + 4) × 5 equals 35.',
-      'To find the sum of the squares of two numbers, square each number and then add the results.\
+    'To find the sum of the squares of two numbers, square each number and then add the results.\
       For example, 2² + 3² equals 13.',
-      'To evaluate an expression with multiple operations, follow the order of operations:\
+    'To evaluate an expression with multiple operations, follow the order of operations:\
       parentheses, exponents, multiplication and division (from left to right), and finally\
       addition and subtraction (from left to right). For example, 9 - 5 ÷ 5 equals 8.',
-      'To find a percentage of a number, multiply the percentage by the number and divide by\
+    'To find a percentage of a number, multiply the percentage by the number and divide by\
       100. For example, 5/8 of 64 equals 40.',
-      'To evaluate an expression with multiple operations, follow the order of operations:\
+    'To evaluate an expression with multiple operations, follow the order of operations:\
       parentheses, exponents, multiplication and division (from left to right), and finally\
       addition and subtraction (from left to right). For example, 12 + 5 × 2 - 8 equals 19.',
-      'To evaluate an expression with parentheses, first calculate the value inside the \
+    'To evaluate an expression with parentheses, first calculate the value inside the \
       parentheses. For example, 2 × (4 + 6) equals 20.',
-      'To find a percentage of a number, multiply the percentage by the number and divide\
+    'To find a percentage of a number, multiply the percentage by the number and divide\
       by 100. For example, 3/4 of 20 equals 15.',
-      'To find the sum of a square root and a squared number, find the square root of the\
+    'To find the sum of a square root and a squared number, find the square root of the\
       squared number and add the results. For example, √144 + 2² equals 14.',
-      'To find the factorial of a number, multiply the number by all positive integers less\
+    'To find the factorial of a number, multiply the number by all positive integers less\
       than it. For example, 5! equals 120.',
-      'To find a percentage of a number, divide the percentage by 100 and multiply by the \
+    'To find a percentage of a number, divide the percentage by 100 and multiply by the \
       number. For example, 100 ÷ 10% equals 10.',
-      'To find the sum of a squared number and a square root, first find the square root of \
+    'To find the sum of a squared number and a square root, first find the square root of \
       the squared number and then add the results. For example, 3² + √49 equals 16.',
-      'To evaluate an expression with multiple operations, follow the order of operations: \
+    'To evaluate an expression with multiple operations, follow the order of operations: \
       parentheses, exponents, multiplication and division (from left to right), and finally \
       addition and subtraction (from left to right). For example, 8 - 2 + 5 × 3 equals 19.',
-      'To evaluate an expression with parentheses, first calculate the value inside the\
+    'To evaluate an expression with parentheses, first calculate the value inside the\
       parentheses. For example, 2 × (7 + 3) - 5 equals 15.',
-      'To find the sum of a division and a power of a number, first calculate the power of\
+    'To find the sum of a division and a power of a number, first calculate the power of\
       the number and then divide by the given number. For example, 25 ÷ 5 + 2³ equals 13.',
-      'To find the sum of a multiplication and a division, first calculate the division and \
+    'To find the sum of a multiplication and a division, first calculate the division and \
       then add the results. For example, 4 × 7 + 10 ÷ 2 equals 34.',
-      'To find the sum of a subtraction, a squared number, and a square root, first find the\
+    'To find the sum of a subtraction, a squared number, and a square root, first find the\
       square of the squared number and then add the results. For example, 15 - 2² + √81 equals 35.',
-      'To find the factorial of a number, multiply the number by all positive integers less \
+    'To find the factorial of a number, multiply the number by all positive integers less \
       than it. For example, 7! equals 5040.',
-      'To find a percentage of a number, divide the percentage by 100 and multiply by the number.\
+    'To find a percentage of a number, divide the percentage by 100 and multiply by the number.\
       For example, 50% of 200 equals 100.',
-      'To find the sum of a power of a number and a subtraction, first calculate the power of\
+    'To find the sum of a power of a number and a subtraction, first calculate the power of\
       the number and then subtract the given number. For example, 2³ × 5 - 10 equals 40.',
   ]
   score = 0
-  #sets intial score at begining of game
+  # Sets intial score at begining of game
   lives = 3
-  #sers intial lives
-  # author: luka
-  # date: aug 11, 2023
-  # diiificulty processing 
-  # v1.5
+  # Sets intial lives
+  # Author: luka
+  # Date: aug 11, 2023
+  # Difficulty processing
+  # V1.5
   for i in range(NOQ):
-    #for interger in quesion rage...
+    # For interger in quesion rage...
     output = input(qus[i]).lower()
-    #gets uesrs input for question
+    # Gets uesrs input for question
     if output in answer[i]:
-      #if user input is corespondant to answer...
+      # If user input is corespondant to answer...
       print('correct')
       print('lives:', lives)
-      #display current lives
+      # Display current lives
       score += 5
-      #adds 10 score
-      print('score:', score) 
-      #print current socre 
+      # Adds 10 score
+      print('score:', score)
+      # Print current socre
       print()
-      
+
     else:
-      #if user is not coesopnant to ansewr array...
+      # If user is not coesopnant to ansewr array...
       print('incorrect')
       print('answer:', str(answer[i][0]))
-      #print the right answer 
+      # Print the right answer
       print('help:', help_msg[i])
-      #print help msg
+      # Print help msg
       lives -= 1
-      #take away a life
+      # Take away a life
       print('lives:', lives)
-      #print lives
-      print('score:', score) 
-      #Print score
+      # Print lives
+      print('score:', score)
+      # Print score
       print()
 
-    
     if lives <= 0:
-      #if lives is less than 0...
+      # If lives is less than 0...
       print("you died")
       slep1()
-      #pauses program
+      # Pauses program
 
       return score
-      break 
-  return score 
+      break
+  return score

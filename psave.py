@@ -1,5 +1,4 @@
 import json
-import operator
 
 
 def createplayer(name):
@@ -17,19 +16,20 @@ def loadplayer(name):
 
   for p in allplayers:
     if (p["name"] == name):
-      return p 
+      return p
 
   return "not found"
+
 
 def saveplayer(player):
   # author: luka
   # date: aug 4, 2023
-  # save player 
+  # save player
   # v1
   with open("save.json", "r") as file:
     allplayers = json.load(file)
 
-  playerindex = None 
+  playerindex = None
   for i, p in enumerate(allplayers):
     if p["name"] == player["name"]:
       playerindex = i
@@ -37,7 +37,8 @@ def saveplayer(player):
   if (playerindex == None):
     allplayers = allplayers + [player]
   else:
-    allplayers = allplayers[:playerindex] + [player] + allplayers[playerindex + 1:]
+    allplayers = allplayers[:playerindex] + [player
+                                             ] + allplayers[playerindex + 1:]
 
   with open("save.json", "w") as file:
     json.dump(allplayers, file)

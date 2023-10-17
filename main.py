@@ -1,23 +1,25 @@
 import easy, medium, hard
 import useful, psave
 import fcntl, termios, struct
-import os
+import os, sys
 
 
 # Functions go here...
 def terminal_size():
-  # author: luka
-  # date: aug 7, 2023
-  # witdh for centing prints and things
-  # v1
+  # Author: luka
+  # Date: aug 7, 2023
+  # Witdh for centing prints and things
+  # V1
+  # Use struct and fcntl to fetch the terminal size (width and height)
   th, tw, hp, wp = struct.unpack(
-    'HHHH', fcntl.ioctl(0, termios.TIOCGWINSZ, struct.pack('HHHH', 0, 0, 0,
-                                                           0)))
+    'HHHH', fcntl.ioctl(0, termios.TIOCGWINSZ, struct.pack('HHHH', 0, 0, 0, 0)))
+
+  # Store the terminal width in the 'width' variable (assuming it's defined elsewhere in the code)
   global width
   width = tw
+
+  # Return the terminal width and height
   return tw, th
-
-
 terminal_size()
 
 
@@ -26,10 +28,10 @@ def stars():
 
 
 def leaderboard():
-  # author: luka
-  # date: aug 8, 2023
-  # leaderboard for players
-  # v1.1
+  # Author: luka
+  # Date: aug 8, 2023
+  # Leaderboard for players
+  # V1.1
   leaderboard = psave.getleaderboard()
   print("~ LEADEROARD ~".center(width))
   stars()
@@ -38,15 +40,15 @@ def leaderboard():
     name = player["name"]
     score = player["score"]
     print(f"{i + 1}. {name}: {score}".center(width))
-    #lists players in decending order
+    # Lists players in decending order
   stars()
 
 
 def math_quiz_challenge():
-  # author: luka
-  # date: Jun 25, 2023
-  # math quiz chanlange def
-  # v3.31
+  # Author: luka
+  # Date: Jun 25, 2023
+  # Math quiz chanlange def
+  # V3.31
 
   # Get user input for difficulty level and quiz length
   difficulty = useful.getUserInput(
@@ -57,7 +59,7 @@ def math_quiz_challenge():
   )
 
   while True:
-    #ask user for how much quesions they want
+    # Ask user for how much quesions they want
     try:
       nof = int(input('how many question you want? '))
       if nof not in range(1, 28):
@@ -70,16 +72,16 @@ def math_quiz_challenge():
   print()
 
   match difficulty:
-  # author: luka
-  # date: Jun 25, 2023
-  # math quiz chanlange def
-  #v:2
+  # Author: luka
+  # Date: Jun 25, 2023
+  # Math quiz chanlange def
+  # V:2
     case 0:
       score = easy.questions(nof)
-      #links difficutly based on input
+      # Links difficutly based on input
       player["score"] = player["score"] + score
       psave.saveplayer(player)
-      #adds players score form game so json file
+      # Adds players score form game so json file
     case 1:
       score = medium.questions(nof)
       player["score"] = player["score"] + score
@@ -89,15 +91,15 @@ def math_quiz_challenge():
       player["score"] = player["score"] + score
       psave.saveplayer(player)
     case _:
-      #if user input not in case seiries, print this
+      # If user input not in case seiries, print this
       print('please enter a valid input')
 
 
 def statement_generator(statement, decoration):
-  # author: luka
-  # date: Jun 21, 2023
-  # generates a border around prints
-  # v1.1
+  # Author: luka
+  # Date: Jun 21, 2023
+  # Generates a border around prints
+  # V1.1
 
   sides = decoration * 8
 
@@ -112,12 +114,12 @@ def statement_generator(statement, decoration):
 
 
 def yes_no(question):
-  # author: luka
-  # date: Jun 21, 2023
-  # user input if they want to chose yes or no
+  # Author: luka
+  # Date: Jun 21, 2023
+  # User input if they want to chose yes or no
   valid = False
   while not valid:
-    # put user in loop
+    # Put user in loop
     response = input(question).lower()
 
     if response == "yes" or response == "y":
@@ -133,44 +135,44 @@ def yes_no(question):
 
 
 def print_game_instructions():
-  # author: luka
-  # date: Jun 21, 2023
-  # game instructions
-  # v2
+  # Author: luka
+  # Date: Jun 21, 2023
+  # Game instructions
+  # V2
   print("Welcome to the Math Quiz Game!\n")
 
   print(
     "In this thrilling and educational adventure, you will embark on a journey of mathematical challenges! "
     "Are you ready to put your math skills to the test and have a blast along the way? Strap in, because you "
-    "are in for an exciting ride!\n")
+    "are in for an exciting ride!/n")
 
   print(
     "At the beginning of the game, you will be presented with three exciting difficulty levels to choose "
     "from: Easy, Medium, and Hard. Each level comes with its own set of math questions that gradually "
     "increase in complexity. Whether you're a math whiz looking for a challenge or a beginner seeking to "
-    "sharpen your skills, there's a difficulty level perfect for you!\n")
+    "sharpen your skills, there's a difficulty level perfect for you!/n")
 
   print(
     "You will start with a total of three lives, so don't worry if you stumble along the way. Every correct "
     "answer will earn you points, and your ultimate goal is to score as high as you can. Remember, even if "
-    "you lose a life, the game isn't over! Keep pushing yourself and see how far you can go.\n"
+    "you lose a life, the game isn't over! Keep pushing yourself and see how far you can go./n"
   )
 
   print(
     "Once you've chosen a difficulty level, you'll have the chance to select the number of questions you wish "
     "to tackle. Prepare to face a series of brain-teasers that will test your arithmetic, algebraic, and even "
     "trigonometric abilities. But don't fret! We've got you covered with helpful hints if you ever find "
-    "yourself in a tough spot.\n")
+    "yourself in a tough spot./n")
 
   print(
     "As you progress through the game, each round will present a new question for you to solve. Read the "
     "questions carefully and take your time to calculate the answers. Remember, it's not just about speed; "
-    "accuracy is key!\n")
+    "accuracy is key!/n")
 
   print(
     "Every correct answer will give you 1 score to add onto your final score, while an incorrect answer will cost"
     "you one of your precious lives. So stay focused, but most importantly, have fun! The thrill of solving a "
-    "challenging math problem is truly rewarding.\n")
+    "challenging math problem is truly rewarding./n")
 
 
 def update_score_and_save(new_score):
@@ -180,73 +182,71 @@ def update_score_and_save(new_score):
 
 # Main routine goes here...
 
-# greeting
-# v2
+# Greeting
+# V2
 statement_generator("Math Mastermind", "!")
 print("Welcome to the best math game".center(width))
-#title screen
+# Title screen
 print()
 
 name = input("what is your name? ")
-# author: luka
-# date: aug 10, 2023
-# ask user for name and save
-# v1.3
-#load player form json
+# Author: luka
+# Date: aug 10, 2023
+# Ask user for name and save
+# V1.3
+# Load player form json
 player = psave.loadplayer(name)
 
 if (player == "not found"):
   player = psave.createplayer(name)
-  #creates player if not found in json
+  # Creates player if not found in json
   instructions = yes_no("do you want instructions? ")
-  # author: luka
-  # date: aug 10, 2023
-  # ask user if they want instruction
-  # v1.3
+  # Author: luka
+  # Date: aug 10, 2023
+  # Ask user if they want instruction
+  # V1.3
   if instructions == "yes":
     print_game_instructions()
-    #if user inputs yes, print game instructions & break out of loop
+    # If user inputs yes, print game instructions & break out of loop
 
   elif instructions == "no":
     print("have fun!")
-    #if user inputs no, continue 
-    
+    # If user inputs no, continue
+
   else:
     print("please enter either yes or no")
-    # continue loop if user inputs invalid option
-    
-    
+    # Continue loop if user inputs invalid option
 
 else:
-  #if user is found in json it will print this 
+  # If user is found in json it will print this
   print(f"welcome back {name}")
   played_before = True
 
 leaderboard()
-#displays leaderboard
+# Displays leaderboard
 print()
 
 playing = True
 while playing == True:
-  #put user in game loop
+  # Put user in game loop
   math_quiz_challenge()
-  #starts math game
+  # Starts math game
   print()
 
-  #concratulation screen
+  # Congratulation  screen
   statement_generator("congratulations!", "೫")
   leaderboard()
-  
+
   play_again = yes_no("Would you like to play again?")
-  # author: luka
-  # date: aug 8, 2023
-  # ask user if they want to play again
-  # v1
+  # Author: luka
+  # Date: aug 8, 2023
+  # Ask user if they want to play again
+  # V1
   if play_again == "no":
     print("thank you for playing!")
-    exit()
-    #exits program on user no input
+    sys.exit
+    # Exits program on user no input
   else:
     os.system('clear')
     leaderboard()
-    # repeats loop whist clearing screen
+    # Repeats loop whist clearing screen

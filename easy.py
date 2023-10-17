@@ -1,13 +1,14 @@
 import time
-import os
+
 
 def slep1():
   time.sleep(3)
-  
-# author: luka
-# date: Jun 25, 2023
-# easy questions and answers
-# v1.6
+
+
+# Author: luka
+# Date: Jun 25, 2023
+# Easy questions and answers
+# V1.6
 def questions(NOQ):
   qus = [
     '1 + 1 = ',
@@ -58,7 +59,6 @@ def questions(NOQ):
     ['16'],
     ['17'],
     ['18'],
-    ['19'],
     ['20'],
     ['21'],
     ['22'],
@@ -128,51 +128,49 @@ def questions(NOQ):
   ]
 
   score = 0
-  #sets intial score at begining of game
+  # Sets intial score at begining of game
   lives = 3
-  #sers intial lives
-  # author: luka
-  # date: aug 11, 2023
-  # diiificulty processing 
-  # v1.5
+  # Sets intial lives
+  # Author: luka
+  # Date: aug 11, 2023
+  # Dificulty processing
+  # V1.5
   for i in range(NOQ):
-    #for interger in quesion rage...
+    # For interger in quesion rage...
     output = input(qus[i]).lower()
-    #gets uesrs input for question
+    # Gets uesrs input for question, i equals the interger in the range
     if output in answer[i]:
-      #if user input is corespondant to answer...
+      # If user input is corespondant to answer..A
       print('correct')
       print('lives:', lives)
-      #display current lives
+      # Display current lives
       score += 1
-      #adds 10 score
-      print('score:', score) 
-      #print current socre 
+      # Adds 1 score
+      print('score:', score)
+      # Print current socre
       print()
-      
+
     else:
-      #if user is not coesopnant to ansewr array...
+      # If user is not coesopnant to ansewr array...
       print('incorrect')
       print('answer:', str(answer[i][0]))
-      #print the right answer 
+      # Print the right answer
       print('help:', help_msg[i])
-      #print help msg
+      # Print help msg
       lives -= 1
-      #take away a life
+      # Take away a life
       print('lives:', lives)
-      #print lives
-      print('score:', score) 
-      #Print score
+      # Print lives
+      print('score:', score)
+      # Print score
       print()
 
-    
     if lives <= 0:
-      #if lives is less than 0...
+      # If lives is less than 0...
       print("you died")
       slep1()
-      #pauses program
+      # Pauses program
 
       return score
-      break 
-  return score 
-
+      break
+  return score
